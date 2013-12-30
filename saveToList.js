@@ -54,7 +54,7 @@ chrome.tabs.onActivated.addListener(function(){
 });
 
 //Called when the user clicks on the StackMark icon
-chrome.browserAction.onClicked.addListener(function() {
+function markIt() {
 	var url, title, furl, d, obj={}, info={};
 	d = Date.now();
 	var queryHelper = {'active': true, 'currentWindow': true};
@@ -96,4 +96,4 @@ chrome.browserAction.onClicked.addListener(function() {
 		}
 	});
 	
-});
+};

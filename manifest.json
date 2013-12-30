@@ -15,9 +15,7 @@
   },
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "StackMark
-
-Left click to add to your list.
-Right click to bookmark and list."
+    "default_title": "StackMark",
+    "default_popup": "popup.html"
   }
 }

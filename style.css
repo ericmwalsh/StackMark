@@ -1,0 +1,19 @@
+body {
+	font-family:'Arial';
+  	font-size:14px;
+  	min-width:300px;
+}
+
+ul {
+	list-style:none;
+  	padding:0px;
+  	margin:0px;
+}
+
+a {
+	text-decoration:none;
+}
+
+li:hover {
+	background-color:#FFFFAA;
+}
