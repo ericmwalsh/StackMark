@@ -55,14 +55,14 @@ function appendSiteToList(item, date) {
 
 	var shortTitle = item.title.length > 43 ? item.title.slice(0,40) + '...' : item.title;
 
-	var $li = $('<li>').click((function(url, date) {
+	var $li = $('<li id="' + date + '">').click((function(url, date) {
 		return function() {
 			chrome.storage.sync.remove(date);
 			window.open(url, '_blank');	
 		}
 	})(item.url, date.toString()));
 
-	var $a = $('<a title="' + item.title + '" target="_blank">' + shortTitle + '</a></li>');
+	var $a = $('<a title="' + item.title + '" target="_blank">' + shortTitle + '</a>');
 	var $img = $('<img src="' + item.furl + '" height="16" width="16">');
 
 	$a.prepend($img);
@@ -90,7 +90,10 @@ function modifyStack(stacked) {
 		else{
 			// Remove an already 'stacked' item from the list.
 			if(stacked !== null){
+				bkg.stacked = null;
 				toggleButton();
+
+				$('#' + stacked).remove();
 
 				chrome.storage.sync.remove(stacked.toString(), function(){
 					chrome.browserAction.setIcon({path:'icon.png'}, function(){
@@ -101,6 +104,7 @@ function modifyStack(stacked) {
 			}
 			// Add a new item to the stack.
 			else{
+				bkg.stacked = d;
 				info = {url:url, title:title, furl:furl };
 				
 				appendSiteToList(info, d);
@@ -117,4 +121,5 @@ function modifyStack(stacked) {
 			}
 		}
 	});
+
 };
