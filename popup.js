@@ -78,8 +78,8 @@ function modifyStack(stacked) {
 	var url, title, furl, d, obj={}, info={};
 	d = Date.now();
 	var queryHelper = {'active': true, 'currentWindow': true};
-	var defTitle = 'StackMark\n\nLeft click to add to your list.\nRight click to bookmark and list.';
-	var newTitle = 'StackMark\n\nLeft click to remove from list.'
+	var defTitle = 'StackMark\n\nLeft click to open your list.';
+	var newTitle = 'StackMark\n\nLeft click to remove from list.';
 
 	chrome.tabs.query(queryHelper, function (tabs) {
     	url = tabs[0].url;

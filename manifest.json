@@ -2,8 +2,11 @@
   "manifest_version": 2,
 
   "name": "StackMark",
-  "description": "This extension allows you to save websites to a 'read it later' list that is viewable on the 'New Tab' page in Google Chrome.",
+  "description": "This extension allows you to save websites to a 'read it later' popup that opens when you click the star icon.",
   "version": "1.0.0",
+  "icons": { "16": "StackMark16.png",
+           "48": "StackMark48.png",
+          "128": "StackMark128.png" },
 
   "permissions": [
     "storage",
@@ -18,8 +21,7 @@
     "default_popup": "popup.html",
     "default_title": "StackMark
 
-Left click to add to your list.
-Right click to bookmark and list."
+Left click to open your list."
    }
   
 }
