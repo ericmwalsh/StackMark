@@ -53,6 +53,9 @@ function renderList(items) {
 function appendSiteToList(item, date) {
 	var $ul = $('#sites');
 
+	if(item.furl == undefined) {
+		item.furl = 'eric.png';
+	}
 	var shortTitle = item.title.length > 43 ? item.title.slice(0,40) + '...' : item.title;
 
 	var $li = $('<li id="' + date + '">').click((function(url, date) {
